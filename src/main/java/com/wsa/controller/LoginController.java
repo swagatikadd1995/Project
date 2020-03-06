@@ -66,6 +66,7 @@ public class LoginController {
 
 	@GetMapping("/state/{id}")
 	public ResponseEntity<?> getCityByStateId(@PathVariable("id") int stateId) {
+		log.info("Get state By Id " + stateId);
 		List<CityEntity> listCity = loginService.getCityByStateIdService(stateId);
 		if (listCity.size() == 0) {
 			return new ResponseEntity<String>("No State for this stateId " + stateId, HttpStatus.BAD_REQUEST);
