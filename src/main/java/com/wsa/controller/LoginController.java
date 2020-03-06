@@ -77,7 +77,7 @@ public class LoginController {
 
 	@PostMapping("/registar")
 	public ResponseEntity<String> userRegistration(@RequestBody RegistrationDto registrationDto) {
-
+		log.info("Post a new Registration ");
 		try {
 			LoginValidation.registarDtoValidation(registrationDto);
 			
